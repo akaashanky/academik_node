@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+    <html class="no-js">
+        
+        <head>
+            <title>Akademik Home Page</title>
+            <!-- Bootstrap -->
+            <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+            <link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+            <link href="vendors/easypiechart/jquery.easy-pie-chart.css" rel="stylesheet" media="screen">
+            <link href="assets/styles.css" rel="stylesheet" media="screen">
+            <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]>
+                <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+            <script src="vendors/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+             <script src="vendors/jquery-1.9.1.min.js"></script>
+        </head>
+        
+        <body>
+            <div class="navbar navbar-fixed-top"> <!-- Top Nav-bar -->
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="#">Academik</a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right">
+                                <li class="dropdown">
+                                    <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> John Doe <i class="caret"></i>
+
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a tabindex="-1" href="#">Profile</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a tabindex="-1" href="login.html">Logout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav">
+                                <li class="active">
+                                    <a href="#">Console</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
+
+                                    </a>
+                                    <ul class="dropdown-menu" id="menu1">
+                                        <li>
+                                            <a href="#">Tools <i class="icon-arrow-right"></i>
+
+                                            </a>
+                                            <ul class="dropdown-menu sub-menu">
+                                                <li>
+                                                    <a href="#">Reports</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Logs</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Errors</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Other Link</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="#">Other Link</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Other Link</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i class="caret"></i>
+
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a tabindex="-1" href="#">User List</a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="-1" href="#">Search</a>
+                                        </li>
+                                        <li>
+                                            <a tabindex="-1" href="#">Permissions</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--/.nav-collapse -->
+                    </div>
+                </div>
+            </div> <!-- End of Top Nav-bar-->
+
+
+            <div class="container-fluid">
+                <div class="row-fluid"> 
+                    <div class="span3" id="sidebar"> <!-- Side Nav-bar-->
+                            <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
+                                <li>
+                                    <a href="home.html"><i class="icon-chevron-right"></i> Home</a>
+                                </li>
+                                <li class="active">
+                                    <a href="#"><i class="icon-chevron-right"></i> Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="reports.html"><i class="icon-chevron-right"></i> Reports</a>
+                                </li>
+
+                            </ul>
+                    </div> <!-- END of side nav-bar-->
+                    <div class="span9">
+                            <div class="block">
+                                <div class="navbar navbar-inner block-header">
+                                    <div class="muted pull-left">Create custom charts</div>
+                                    <div class="pull-right"><a href="dashboard.html"><span class="badge badge-warning">Clear</span></a>
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in">
+                                    <div class="span12">
+                                        <select onChange="showSelector($(this).val());" id="statGroupSelect">
+                                          <option selected>Analyse...</option>
+                                          <option value="teacher">Teacher</option>
+                                          <option value="class">Class</option>
+                                          <option value="students">Students</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in hidden" id="selector_students">
+                                    <div class="span12">
+                                        <select onChange="$('#graphSelector').removeClass('hidden');">
+                                            <option selected>Please select student</option>
+                                          <option>Steven</option>
+                                          <option>Lucas</option>
+                                          <option>Phillipe</option>
+                                          <option>Enrique</option>
+                                          <option>Kolo</option>
+                                          <option>Joe</option>
+                                          <option>Dietmar</option>
+                                          <option>Xabi</option>
+                                          <option>Daniel</option>
+                                          <option>Vladimir</option>
+                                          <option>Luis</option>
+                                          <option>Simon</option>
+                                          <option>Aly</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in hidden" id="selector_class">
+                                    <div class="span12">
+                                        <select onChange="$('#graphSelector').removeClass('hidden');">
+                                          <option selected>Please select class</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option>10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in hidden" id="graphSelector">
+                                    <div class="span12">
+                                        <select onChange="$('#axisSelector').removeClass('hidden');" id="chartTypeId">
+                                            <option selected>Please select chart type</option>
+                                          <option value="bar">Bar</option>
+                                          <option value="line">Line</option>
+                                          <option value="pie">Pie</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="block-content collapse in hidden" id="axisSelector">
+                                    <div class="span12">
+                                        <p class="text-info">Please select domains for X and Y Axes</p>
+                                             <div class="row-fluid"> 
+                                                <div class="span6">
+                                                    <select id="xAxis">
+                                                      <option selected value="-1">X-axis</option>
+                                                      <option value="1">Subjects</option>
+                                                      <option value="2">Tests</option>
+                                                    </select>
+                                                </div>
+                                                 <div class="span6">
+                                                    <select id="yAxis">
+                                                      <option value="-1" selected>Y-Axis</option>
+                                                      <option value="1">Scores</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="btn btn-primary" onClick="renderchart($('#chartTypeId').val(),1);">Generate Chart</div>
+                                    </div>
+                                </div>
+                                <div class="block collapse in hidden" id="chartArea">
+                            
+                                    <div class="navbar navbar-inner block-header">
+                                            <div class="muted pull-left">Report</div>
+                                            <div class="pull-right"><a onClick="renderComapareModal();"><span class="badge badge-warning">Compare</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="block-content collapse in">
+                                            <div class="span12">
+                                                <div id="catchart" style="width:100%; height:300px;"></div>
+                                            </div>
+                                        </div>
+                        </div>
+                            </div>
+                         
+                    </div>
+
+                </div>
+            </div>
+           
+            <div id="modal_class" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 id="myModalLabel">Select class to compare</h3>
+                </div>
+                <div class="modal-body">
+                    <select>
+                      <option selected>-</option> 
+                      <option>10-B</option>
+                      <option>10-C</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button class="btn btn-primary" data-dismiss="modal" onClick="renderchart($('#chartTypeId').val(),2);">Add Class</button>
+                </div>
+            </div>
+            <div id="modal_students" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3 id="myModalLabel">Select a student to compare</h3>
+                </div>
+                <div class="modal-body">
+                    <select>
+                        <option selected>-</option>
+                      <option>Steven</option>
+                      <option>Lucas</option>
+                      <option>Phillipe</option>
+                      <option>Enrique</option>
+                      <option>Kolo</option>
+                      <option>Joe</option>
+                      <option>Dietmar</option>
+                      <option>Xabi</option>
+                      <option>Daniel</option>
+                      <option>Vladimir</option>
+                      <option>Luis</option>
+                      <option>Simon</option>
+                      <option>Aly</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    <button class="btn btn-primary" data-dismiss="modal" onClick="renderchart($('#chartTypeId').val(),2);">Add Student</button>
+                </div>
+            </div>
+
+            <!--/.fluid-container-->
+             <link rel="stylesheet" href="vendors/morris/morris.css">
+
+
+           
+            <script src="vendors/jquery.knob.js"></script>
+            <script src="vendors/raphael-min.js"></script>
+            <script src="vendors/morris/morris.min.js"></script>
+
+            <script src="bootstrap/js/bootstrap.min.js"></script>
+            <script src="vendors/flot/jquery.flot.js"></script>
+            <script src="vendors/flot/jquery.flot.categories.js"></script>
+            <script src="vendors/flot/jquery.flot.pie.js"></script>
+            <script src="vendors/flot/jquery.flot.time.js"></script>
+            <script src="vendors/flot/jquery.flot.stack.js"></script>
+            <script src="vendors/flot/jquery.flot.resize.js"></script>
+            <script src="assets/scripts.js"></script>
+
+            <script>
+            function renderchart(chartType,num_comparisons) {
+                 $('#chartArea').removeClass('hidden');
+                $('#catchart').html('');
+                console.log('renderchart');
+                console.log(chartType);
+                console.log(num_comparisons);
+                if(chartType=="line"){
+                    renderLine(num_comparisons);
+                    return;
+                }
+                var data=[]
+                $('#chartArea').removeClass('hidden');
+                $('#catchart').html('');
+                if(num_comparisons==2){
+                    data = [
+                            { y: 'Maths', a: 80, b: 70 },
+                            { y: 'Science', a: 90,  b: 60 },
+                            { y: 'Social Science',a: 70, b: 85 },
+                            { y: 'English', a: 90,  b: 85 },
+                            { y: 'Hindi', a: 75,  b: 80 },
+                            { y: 'Kannada', a: 65,  b: 65 }
+                          ]
+                      }else{
+                        data = [
+                            { y: 'Maths', a: 80},
+                            { y: 'Science', a: 90},
+                            { y: 'Social Science', a: 70},
+                            { y: 'English', a: 90},
+                            { y: 'Hindi', a: 75},
+                            { y: 'Kannada', a: 65}
+                          ]
+                      }
+                
+               
+                    Morris.Bar({
+                        element: 'catchart',
+                          data: data,
+                          xkey: 'y',
+                          ykeys: (num_comparisons==1)?['a']:['a', 'b'],
+                          labels: (num_comparisons==1)?['Class 10A']:['Class 10A', 'Class 10B'] 
+                        });
+
+                    
+               
+            }
+
+            function renderLine(num_comparisons){
+                // Morris Line Chart
+            var tax_data = [
+                    { y: '1', a: 60, b: 90 },
+                    { y: '2', a: 70,  b: 89 },
+                    { y: '3', a: 80,  b: 85 },
+                    { y: '4', a: 90,  b: 90 },
+                    { y: '5', a: 92,  b: 80 },
+                    { y: '6', a: 90,  b: 85 },
+                    { y: '7', a: 89, b: 90 }
+            ];
+            Morris.Line({
+                element: 'catchart',
+                  data: tax_data,
+                  xkey: 'y',
+                  ykeys:(num_comparisons==1)?['a']: ['a', 'b'],
+                  xLabelFormat:function (x) { return "Test-"+x.getYear().toString(); },
+                  labels: ["Steven's score", "Phillipe's score"]
+                });
+            }
+
+            function showSelector(id){
+                console.log(id);
+                var selectId = "#selector_"+id;
+                 console.log(selectId);
+                $("div[id*='selector']").addClass('hidden')
+                $(selectId).removeClass('hidden')
+
+            }
+            function renderComapareModal(){
+                var groupVal = $('#statGroupSelect').val();
+                var modalId = "#modal_"+groupVal;
+                $(modalId).modal();
+
+            }
+            </script>
+        </body>
+
+    </html>

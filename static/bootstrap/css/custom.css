@@ -1,0 +1,19 @@
+.chzn-container {
+  /* This is the only width setting you'll need to change. */
+  width: auto !important;
+}
+.chzn-container .chzn-drop {
+  width: auto !important;
+}
+.chzn-container .chzn-drop .chzn-search {
+  width: auto !important;
+}
+#web_template_exploit_name_chzn .chzn-drop .chzn-search input {
+  width: auto !important;
+}
+input {
+  width: auto !important;	
+}
+body#login .container {
+	background-image: url(images/education.jpg);
+}
