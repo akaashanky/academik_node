@@ -1,0 +1,9 @@
+{
+  "name": "academik-node",
+  "description": "academik prototype",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "connect": "2.4.2"
+  }
+}
